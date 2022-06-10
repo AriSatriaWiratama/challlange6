@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tiket_data" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df013db5-f76e-44d3-b0df-bcbc46d93160">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[cmVzZXJ2YXNpX3Rpa2V0LnVzZXJzIEFTICwxNzYsODgsZDQ4NjQ2OTgtMzVkNS00MzJiLThiN2Mt
+Nzc1NzFjOGNmYWE5O3Jlc2VydmFzaV90aWtldC5maWxtcyBBUyAsMTcsMzUsYjI3Y2IyNjAtZGEx
+Mi00MmI1LTkyMWEtMjRkODRjYjRhZTQ2Ow==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="reservasi_tiket_jasper"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT reservasi_tiket.films.filmcode,
+	reservasi_tiket.films.filmname,
+	reservasi_tiket.films.is_tayang,
+	reservasi_tiket.users.username
+FROM reservasi_tiket.films,
+	reservasi_tiket.users]]>
+	</queryString>
+	<field name="filmcode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="filmcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="filmcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="films"/>
+	</field>
+	<field name="filmname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="filmname"/>
+		<property name="com.jaspersoft.studio.field.label" value="filmname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="films"/>
+	</field>
+	<field name="is_tayang" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="is_tayang"/>
+		<property name="com.jaspersoft.studio.field.label" value="is_tayang"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="films"/>
+	</field>
+	<field name="username" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="username"/>
+		<property name="com.jaspersoft.studio.field.label" value="username"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="users"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{filmcode}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#FF3333" backcolor="#FF3333" uuid="ff649bda-bbd1-4c2d-bd67-21f69ad64bbf"/>
+					<rectangle>
+						<reportElement mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#050505" uuid="a7ae31ce-9474-4e4b-9627-eb9152ff7b80"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement style="SubTitle" x="170" y="0" width="622" height="24" forecolor="#FFFFFF" uuid="b5a25815-f4ed-4382-9712-d113dc519d4e"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{filmcode}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="70" y="0" width="100" height="30" forecolor="#FFFFFF" uuid="e8a3330f-c099-4dc8-91dd-72cbbba31061">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<textElement>
+							<font fontName="Arial" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Bioskop = ]]></text>
+					</staticText>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{filmname}]]></groupExpression>
+		<groupHeader>
+			<band height="93">
+				<textField>
+					<reportElement style="SubTitle" x="120" y="5" width="714" height="20" forecolor="#050505" uuid="f12f6bf3-7d7e-4d80-a7a9-29937604f672"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="120" y="34" width="714" height="20" forecolor="#050505" uuid="390b347e-a71e-40f9-b861-45058f585a95"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{filmname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="120" y="63" width="714" height="20" forecolor="#050505" uuid="c7e4f2c9-299e-4ae0-bac6-023e43e41e96"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{is_tayang}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="5" width="90" height="30" uuid="ea6aad67-b592-4781-95ce-3f888cd9670a"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[username]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="34" width="49" height="30" uuid="c3bb1a66-5a60-49ae-ae94-d91598de1b42"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[film]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="63" width="99" height="30" uuid="bed5a134-6fa2-4b31-8845-b477519ea02f"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[penayangan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="101" y="6" width="30" height="30" uuid="fc8d897c-1b37-4be0-9b32-1ffd6ad073aa"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[=]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="102" y="35" width="30" height="30" uuid="78ddd187-dfbe-4908-a812-ae4593419fd0"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[=]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="102" y="63" width="30" height="30" uuid="ba7c681d-ed32-49ed-82fd-dfb55ea1fb94"/>
+					<textElement>
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[=]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="is_tayang">
+		<groupExpression><![CDATA[$F{is_tayang}]]></groupExpression>
+	</group>
+	<group name="username">
+		<groupExpression><![CDATA[$F{username}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="175" y="0" width="450" height="62" uuid="bc1ce1da-8232-46ea-be55-cec4abb986dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Reservasi Ticket]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="80" width="196" height="22" uuid="f6a78448-8260-4445-a9e0-e3fb53b080d9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Binar cinema]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="e9d2002a-c8ee-4649-a258-640dad29110c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="fa5e88d5-a011-4e32-8f12-ce923f903111"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#FF3333" backcolor="#FF3333" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#FFFFFF" uuid="e5e27efa-b599-499b-9ca3-848cb511cb7b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#FFFFFF" uuid="18cfe1ca-f7d6-48b0-9827-28578b42a5e0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
